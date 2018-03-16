@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+  db:
+    image: rethinkdb:2.3
+    ports:
+      - 29015:29015   # intra-cluster connections
+      - 28015:28015   # client driver connections
+      - 8080:8080     # admin UI
+    networks:
+      - net
+
+  app:
+    build:
+      context: .
+    environment:
+      - DATABASE_HOST=db
+    ports:
+      - 8000:8000
+    networks:
+      - net
+    depends_on:
+      - db
+
+networks:
+  net:
