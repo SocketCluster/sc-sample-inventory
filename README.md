@@ -32,7 +32,7 @@ make updates to the data in realtime.
 
 ## Installation
 
-To run this sample:
+To run this sample locally:
 
 - Make sure you have Git installed (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - Make sure you have Node.js installed (http://nodejs.org/)
@@ -45,3 +45,9 @@ To run this sample:
 - Run ```sudo rethinkdb``` (in a different terminal or in the background - Make sure RethinkDB stays running)
 - Run ```node server```
 - In your browser, go to ```http://localhost:8000/```
+
+Using Docker (via docker-compose):
+
+Run `docker-compose up --build` to start app.
+
+CTRL+C to stop app, then run `docker-compose down` to cleanup.
